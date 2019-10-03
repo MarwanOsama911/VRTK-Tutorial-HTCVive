@@ -70,18 +70,27 @@
         private void Turn()
         {
             if (touchAxis != new Vector2(500, 500))
-            { 
-                //transform
+            {
+                //rotation
                 if (touchAxis.x < .5)
                 {
-                    print("maro < 0.5");
                     gameObject.transform.eulerAngles += new Vector3(0, 10f, 0);
                 }
 
                 if (touchAxis.x > -.5)
                 {
-                    print("maro > 0.5");
                     gameObject.transform.eulerAngles -= new Vector3(0, 10f, 0);
+                }
+
+                //scale
+                if (touchAxis.y < .5)
+                {
+                    gameObject.transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
+                }
+
+                if (touchAxis.y > -.5)
+                {
+                    gameObject.transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f);
                 }
 
             }
