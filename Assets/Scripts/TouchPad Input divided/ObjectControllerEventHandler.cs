@@ -7,7 +7,7 @@
         private ObjectController rcCarScript;
         private Vector2 touchAxis;
         private float triggerAxis;
-        
+
         GameObject gameobjecRightController;
         GameObject gameobjecLeftController;
         private void Start()
@@ -53,7 +53,7 @@
 
         private void DoTriggerAxisChanged(object sender, ControllerInteractionEventArgs e)
         {
-            triggerAxis=e.buttonPressure;
+            triggerAxis = e.buttonPressure;
         }
 
         private void DoTouchpadTouchEnd(object sender, ControllerInteractionEventArgs e)
@@ -63,7 +63,7 @@
 
         private void DoTriggerReleased(object sender, ControllerInteractionEventArgs e)
         {
-            triggerAxis=0f;
+            triggerAxis = 0f;
         }
 
 
@@ -85,12 +85,12 @@
                 //scale
                 if (touchAxis.y < .5)
                 {
-                    gameObject.transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
+                    gameObject.transform.localScale += new Vector3(0.5f, 0.5f, 0.5f);
                 }
 
                 if (touchAxis.y > -.5)
                 {
-                    gameObject.transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f);
+                    gameObject.transform.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
                 }
 
             }
